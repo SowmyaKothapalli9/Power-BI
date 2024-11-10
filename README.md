@@ -1,0 +1,1 @@
+This repository documents my journey in learning Power BI over a 45-day challenge. On Day 1, I created a sample dataset with columns for Student ID, Name, Total Fee, and Pending Fee to explore data visualization basics. I used a Clustered Bar Chart to compare Total and Pending fees per student, gaining foundational skills in data loading and visualization in Power BI.

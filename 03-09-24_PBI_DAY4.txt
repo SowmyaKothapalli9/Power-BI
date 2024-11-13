@@ -1,0 +1,81 @@
+
+
+1. CONNECT TO SUPERSTORE DATA, LOAD ORDERS TABLE AND DO BELOW.
+
+Q) NAVIGATE TO REGION COLUMN, BRING IT TO BEGINNING.
+A. Choose Under Home->Columns->Go To Column->Select Region column
+   Right click->Move->To Beginning OR
+   Transform->Move->To Beginning
+
+Q) CHANGE THE DATA TYPE OF PROFITS TO FIXED DECIMAL NUMBER.
+   Right Click->FIXED DECIMAL NUMBER
+
+Q) REMOVE ROWID COLUMN.
+   Right Click->Remove
+
+Q) REMOVE STATE, CITY AND POSTAL CODE COLUMNS.(At a Time)
+   Home->Choose Columns->Unselect rows to be removed
+
+Q) KEEP ONLY REGION, SALES AND PROFITS.
+   Home->Choose Columns->Select rows wanted
+
+Q) SORT THE SALES COLUMN IN DESCENDING ORDER.
+   Click on the arrow on right side of the row header->Sort Descending OR
+   Home->Sort Descending
+   
+
+--
+2. CONNECT TO Product_details DATA SOURCE AND LOAD PDINFO TABLE AND DO BELOW.
+
+Q) FIND 'STATE-COUNTRY' COLUMN:
+   1) CREATE TWO COLUMNS, ONE FOR STATE AND ANOTHER FOR COUNTRY.
+   A. Home-> Split Column->Select Delimiter=','->Split at->Each occurence of the delimiter
+
+   2) RENAME COLUMNS TO 'STATE' AND 'COUNTRY'.
+   A. Double click on the Header to edit column name
+
+   3) ENSURE THE COLUMNS DOES NOT HAVE EXTRA SPACES IN BEGINNING OR AT THE END
+   A. Right Click->Transform->Trim OR
+      Transform-> Format-> Trim
+
+Q) GET FIRST TWO CHARACTERS OF PRODUCTID COLUMN AND RENAME IT AS PRODUCT CODE.
+A. Home-> Split Column->Number of Characters->Enter 2->Split by->Once as far left as possible
+
+Q) CREATE TWO SEPARATE COLUMNS FOR 'ORDERED ON' COLUMN:
+   ONE COLUMN AS 'ORDERED DATE'
+   ANOTHER AS 'ORDERED TIME'
+A. Home-> Split Column->Select Delimiter=' '->Split at->Each occurence of the delimiter
+   Double click->Change the names of the columns
+
+Q) SPLIT 'CITY - PINCODE' COLUMN INTO TWO COLUMNS: ONE FOR CITY, ONE FOR PINCODE.
+A. Home->Split Column->By Non Digit to Digit and rename columns
+
+Q) SPLIT 'CUSTOMER NAME' INTO TWO COLUMNS: FIRSTNAME AND LASTNAME
+A. Home-> Split Column->By Lower case to Upper case
+
+Q) FOR 'DIMENSIONS' COLUMN, CREATE TWO COLUMNS 
+   ONE FOR LENGTH, ONE FOR BREADTH WITH JUST NUMBERS.
+A. Home->Split Column->Delimiter->Select Custom and enter X->Split at-> each occurence of the delimiter
+   Select Column with cms->Replace->cms->replace with space-> ok
+
+Q) SPLIT THE 'DELIVERED ON' COLUMN INTO MONTH, DAY AND YEAR COLUMNS.
+A. Home->Split Column->Delimiter->Select Custom and enter '-'->Split at-> each occurence of the delimiter
+
+Q) COMBINE 'PRODUCT ID' AND 'PRODUCT CODE' WITH HYPUN IN BETWEEN.
+A. Select two columns->Home->Merge Columns->Select Custom and enter '-'->Give column name as Product ID
+
+Q) FOR EMAIL COLUMN, EXTRACT ONLY THE USERNAMES FROM EMAIL.
+A. Transform->Extract->Text Before Delimiter->Enter delimiter '@'
+
+
+Q) FOR SOURCE COLUMN, GET ONLY THE DOMAIN NAME.
+EX: IF VALUE IS HTTPS://WWW.GMAIL.COM/INBOX, GET OUTPUT AS WWW.GMAIL.COM
+A.  Transform->Extract->Text BetweenDelimiter->Enter delimiter '//' and '/'
+
+Q) FOR COUNTRY COLUMN, CONVERT EVERYTHING TO UPPERCASE
+A. Transform->Format->Uppercase
+
+Q) FOR CITY COLUMN, DISPLAY FIRST LETTER AS CAPITAL AND REMAINING IN LOWER CASE.
+A. Transform->Format->Capitalize each word.
+
+
